@@ -3,7 +3,7 @@ import apostrophe from 'apostrophe';
 
 apostrophe({
   root: import.meta,
-  shortName: 'starter-kit-astro',
+  shortName: 'netlify-test',
   bundles: [ '@apostrophecms/blog' ],
   modules: {
     // Apostrophe module configuration

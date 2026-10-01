@@ -3,6 +3,8 @@ import { loadEnv } from 'vite';
 import node from '@astrojs/node';
 import apostrophe from '@apostrophecms/apostrophe-astro';
 
+import netlify from '@astrojs/netlify';
+
 // Load .env variables into the config file context.
 // process.env is used as a fallback for variables set via the CLI or shell.
 const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), '');
@@ -14,9 +16,7 @@ export default defineConfig({
     // Required for some hosting, like Heroku
     // host: true
   },
-  adapter: node({
-    mode: 'standalone'
-  }),
+  adapter: netlify(),
   integrations: [
     apostrophe({
       aposHost: 'http://localhost:3000',
